@@ -8,7 +8,7 @@ const Banner = () => {
       <Container fluid className="banner-section text-center text-white">
         <div>
           <h1>
-            Donations that <br /> change the world
+            I grow by helping <br /> people in need.
           </h1>
         </div>
       </Container>

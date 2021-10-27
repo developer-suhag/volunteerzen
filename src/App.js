@@ -4,7 +4,7 @@ import "./App.css";
 import Admin from "./components/Pages/Admin/Admin";
 import Blog from "./components/Pages/Blog/Blog";
 import Donation from "./components/Pages/Donation/Donation";
-import Events from "./components/Pages/Events/Events";
+import Events from "./components/Pages/EventsPage/EventsPage";
 import Home from "./components/Pages/Home/Home";
 import Login from "./components/Pages/Login/Login";
 import PageNotFound from "./components/Pages/PageNotFound/PageNotFound";
