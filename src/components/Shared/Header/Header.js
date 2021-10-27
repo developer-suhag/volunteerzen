@@ -3,8 +3,10 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import "./Header.css";
 import logo from "../../../images/logo.png";
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
+  const { user, handleLogout } = useAuth();
   return (
     <>
       <Navbar bg="light" sticky="top" expand="lg" className="p-0">
@@ -47,16 +49,31 @@ const Header = () => {
               >
                 Blog
               </Nav.Link>
-              <Nav.Link as={Link} className="nav-link" to="/login">
-                <Button className="outline-btn px-4" variant="">
-                  Register
-                </Button>
-              </Nav.Link>
+              {user?.email ? (
+                <Nav.Link as={Link} className="nav-link" to="/login">
+                  <Button
+                    onClick={handleLogout}
+                    className="outline-btn px-4"
+                    variant=""
+                  >
+                    Log Out
+                  </Button>
+                </Nav.Link>
+              ) : (
+                <Nav.Link as={Link} className="nav-link" to="/login">
+                  <Button className="outline-btn px-4" variant="">
+                    Register
+                  </Button>
+                </Nav.Link>
+              )}
               <Nav.Link as={Link} className="nav-link" to="/admin">
                 <Button className="px-4" variant="dark">
                   Admin
                 </Button>
               </Nav.Link>
+              {user?.photoURL && (
+                <img className="profile-img" src={user?.photoURL} alt="" />
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

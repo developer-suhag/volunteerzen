@@ -11,3 +11,8 @@
   font-weight: 700;
   color: #fc5490 !important;
 }
+
+.profile-img {
+  width: 50px;
+  border-radius: 50%;
+}
