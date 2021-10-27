@@ -3,11 +3,24 @@ import { Card } from "react-bootstrap";
 
 const SingleEvent = ({ event }) => {
   const { name, img } = event;
+
+  const color = {
+    red: Math.floor(Math.random() * 111),
+    green: Math.floor(Math.random() * 209),
+    blue: Math.floor(Math.random() * 199),
+  };
+
   return (
     <>
       <Card className="h-100 shadow rounded-3">
         <Card.Img variant="top" src={img} />
-        <Card.Body className="py-4">
+        <Card.Body
+          style={{
+            backgroundColor:
+              "rgb(" + color.red + "," + color.green + "," + color.blue + ")",
+          }}
+          className="py-4 text-white text-center"
+        >
           <Card.Title>{name}</Card.Title>
         </Card.Body>
       </Card>
