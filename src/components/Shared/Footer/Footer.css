@@ -1,0 +1,26 @@
+/* footer */
+.footer {
+  background: #120309;
+}
+.developer:hover {
+  color: #75d9ea;
+}
+.social-icons {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+.social-icons svg {
+  font-size: 20px;
+}
+.social-icons:hover {
+  background: #fff;
+  color: #120309;
+}
