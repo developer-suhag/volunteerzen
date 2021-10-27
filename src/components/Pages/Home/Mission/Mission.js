@@ -1,11 +1,11 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import mission from "../../../../images/mission.jpg";
+import mission from "../../../../images/mission.png";
 
 const Mission = () => {
   return (
     <>
-      <Container className="">
+      <Container className="py-3">
         <Row>
           <div className="d-flex align-items-center">
             <Col lg={6}>
@@ -25,7 +25,7 @@ const Mission = () => {
             </Col>
             <Col lg={6}>
               <div>
-                <img src={mission} alt="" />
+                <img className="img-fluid" src={mission} alt="" />
               </div>
             </Col>
           </div>
