@@ -50,22 +50,25 @@ const Header = () => {
                 Blog
               </Nav.Link>
               {user?.email ? (
-                <Nav.Link as={Link} className="nav-link" to="/login">
-                  <Button
-                    onClick={handleLogout}
-                    className="outline-btn px-4"
-                    variant=""
-                  >
-                    Log Out
-                  </Button>
-                </Nav.Link>
+                <Button
+                  onClick={handleLogout}
+                  className="outline-btn px-4"
+                  variant=""
+                >
+                  Log Out
+                </Button>
               ) : (
                 <Nav.Link as={Link} className="nav-link" to="/login">
                   <Button className="outline-btn px-4" variant="">
-                    Register
+                    Log In
                   </Button>
                 </Nav.Link>
               )}
+              <Nav.Link as={Link} className="nav-link" to="/register">
+                <Button className="px-4 volunteerzen-btn" variant="">
+                  Register
+                </Button>
+              </Nav.Link>
               <Nav.Link as={Link} className="nav-link" to="/admin">
                 <Button className="px-4" variant="dark">
                   Admin

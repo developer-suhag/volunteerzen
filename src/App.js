@@ -8,6 +8,7 @@ import Events from "./components/Pages/EventsPage/EventsPage";
 import Home from "./components/Pages/Home/Home";
 import Login from "./components/Pages/Login/Login";
 import PageNotFound from "./components/Pages/PageNotFound/PageNotFound";
+import Register from "./components/Pages/Register/Register";
 import Footer from "./components/Shared/Footer/Footer";
 import Header from "./components/Shared/Header/Header";
 import AuthProvider from "./context/AuthProvider";
@@ -36,6 +37,9 @@ function App() {
             </Route>
             <Route exact path="/login">
               <Login></Login>
+            </Route>
+            <Route exact path="/register">
+              <Register></Register>
             </Route>
             <Route exact path="/admin">
               <Admin></Admin>

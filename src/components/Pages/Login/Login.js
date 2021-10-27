@@ -8,8 +8,11 @@ const Login = () => {
   const { handleGoogleSignIn } = useAuth();
   return (
     <>
-      <Container fluid className="login-section py-5">
-        <div className="bg-white w-50 mx-auto p-4 py-5 my-5 text-center colored-text">
+      <Container
+        fluid
+        className="login-section vh-100 d-flex align-items-center"
+      >
+        <div className="bg-white w-50 mx-auto p-5 text-center colored-text shadow-lg rounded-3">
           <h2>Please Log In</h2>
           <div>
             <Button
