@@ -1,5 +1,4 @@
 import React from "react";
-import "./PageNotFound.css";
 import error from "../../../images/404 Error Page not Found.gif";
 import { Button, Container } from "react-bootstrap";
 import { useHistory } from "react-router";

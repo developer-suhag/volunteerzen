@@ -1,0 +1,13 @@
+/* navbar  */
+.nav-link {
+  font-size: 20px;
+  color: #120309 !important;
+}
+.nav-link:hover {
+  color: #fc5490 !important;
+}
+
+.nav-selected {
+  font-weight: 700;
+  color: #fc5490 !important;
+}

@@ -4,7 +4,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+a {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
 /* google fonts  */
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@500;700&family=Roboto&display=swap");
 
@@ -28,8 +36,16 @@ a {
   background: #6fd1c7;
   color: #120309;
   border-color: #6fd1c7;
-  font-weight: 700;
 }
 .btn-svg svg {
   width: 30px;
+}
+.outline-btn {
+  border: 1px solid #fc5490;
+  color: #fc5490;
+  transition: 0.4s;
+}
+.outline-btn:hover {
+  background: #fc5490;
+  color: #fff;
 }

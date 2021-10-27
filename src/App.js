@@ -26,7 +26,7 @@ function App() {
           <Route exact path="/dontaion">
             <Donation></Donation>
           </Route>
-          <Route exact path="/dontaion">
+          <Route exact path="/events">
             <Events></Events>
           </Route>
           <Route exact path="/blog">
