@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+/* reset style  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* google fonts  */
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@500;700&family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: "Mukta", sans-serif;
+  font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* commun style  */
+.volunteerzen-btn {
+  background: #6fd1c7;
+  color: #120309;
+  border-color: #6fd1c7;
+  font-weight: 700;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-svg svg {
+  width: 30px;
 }
