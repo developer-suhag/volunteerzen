@@ -5,9 +5,11 @@ import "./Banner.css";
 const Banner = () => {
   return (
     <>
-      <Container fluid className="banner-section">
+      <Container fluid className="banner-section text-center text-white">
         <div>
-          <h1 className="text-center">I grow by helping people in need.</h1>
+          <h1>
+            Donations that <br /> change the world
+          </h1>
         </div>
       </Container>
     </>

@@ -11,10 +11,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <Container
-        fluid
-        className="footer text-white py-2 position-fixed bottom-0"
-      >
+      <Container fluid className="footer text-white py-2">
         <Container>
           <Row className="d-flex align-items-center">
             <Col>
