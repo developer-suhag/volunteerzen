@@ -16,6 +16,7 @@
   margin-right: 10px;
   cursor: pointer;
   color: #fff;
+  transition: 0.4s;
 }
 .social-icons svg {
   font-size: 20px;
@@ -23,4 +24,5 @@
 .social-icons:hover {
   background: #fff;
   color: #120309;
+  transform: rotate(360deg);
 }

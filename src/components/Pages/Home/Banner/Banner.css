@@ -1,0 +1,13 @@
+.banner-section {
+  background: linear-gradient(
+      90deg,
+      rgba(50, 50, 50, 0.8) 0%,
+      rgba(160, 187, 185, 0.6) 79%
+    ),
+    url(../../../../images/banner-bg.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 150px 0;
+}
+.banner-section h1 {
+  color: rgb(255, 255, 255);
+}
