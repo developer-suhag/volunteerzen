@@ -1,16 +1,18 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import useAuth from "../../../hooks/useAuth";
 import "./EventPage.css";
 import SingleEvent from "./SingleEvent/SingleEvent";
 const EventsPage = () => {
   const [events, setEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const { user } = useAuth();
   const email = user?.email;
   const emails = { email };
   const values = Object.values(emails);
   useEffect(() => {
+    setIsLoading(true);
     axios
       .post(
         "https://tranquil-garden-58435.herokuapp.com/events/byEmail",
@@ -18,10 +20,18 @@ const EventsPage = () => {
       )
       .then((events) => {
         setEvents(events.data);
+        setIsLoading(false);
       });
   }, []);
 
   // console.log(events);
+  if (isLoading) {
+    return (
+      <div className="text-center py-4">
+        <Spinner animation="border" variant="info" />
+      </div>
+    );
+  }
 
   return (
     <>

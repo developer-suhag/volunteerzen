@@ -1,23 +1,35 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import SingleEvent from "../../../Shared/SingleEvent/SingleEvent";
 
 import "./Events.css";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    setIsLoading(true);
     const loadEvents = async () => {
       const res = await fetch(
         "https://tranquil-garden-58435.herokuapp.com/services"
       );
       const data = await res.json();
       setEvents(data);
+      setIsLoading(false);
     };
     loadEvents();
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="text-center py-4">
+        <Spinner animation="border" variant="info" />
+      </div>
+    );
+  }
+
   return (
     <>
       <Container fluid className="events-section">
