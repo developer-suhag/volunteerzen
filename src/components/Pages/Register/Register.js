@@ -1,11 +1,11 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
 import useAuth from "../../../hooks/useAuth";
 import "./Register.css";
+import swal from "sweetalert";
 
 const Register = () => {
   const [event, setEvent] = useState({});
@@ -23,10 +23,21 @@ const Register = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
+    axios.post("http://localhost:5000/event", data).then((event) => {
+      console.log(event);
+      if (event.data?.insertedId) {
+        swal({
+          title: "Registration successful",
+          icon: "success",
+        });
+        reset();
+      }
+    });
   };
   return (
     <Container
