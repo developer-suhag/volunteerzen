@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import AddEvent from "./components/Pages/AddEvent/AddEvent";
 import Admin from "./components/Pages/Admin/Admin";
 import Blog from "./components/Pages/Blog/Blog";
 import Donation from "./components/Pages/Donation/Donation";
@@ -41,6 +42,9 @@ function App() {
             </Route>
             <PrivateRoute exact path="/register/:id">
               <Register></Register>
+            </PrivateRoute>
+            <PrivateRoute exact path="/addEvent">
+              <AddEvent></AddEvent>
             </PrivateRoute>
             <PrivateRoute exact path="/admin">
               <Admin></Admin>

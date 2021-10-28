@@ -45,6 +45,14 @@ const Header = () => {
                 as={NavLink}
                 activeClassName="nav-selected"
                 className="nav-link"
+                to="/addEvent"
+              >
+                Add Event
+              </Nav.Link>
+              <Nav.Link
+                as={NavLink}
+                activeClassName="nav-selected"
+                className="nav-link"
                 to="/blog"
               >
                 Blog

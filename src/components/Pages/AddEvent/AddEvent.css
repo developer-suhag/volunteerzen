@@ -1,0 +1,28 @@
+.event-form {
+  background: #fff;
+  width: 50%;
+  margin: auto;
+  padding: 50px 40px;
+}
+.event-form .input-field,
+textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #6fd1c7;
+}
+.event-form input {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+}
+
+.event-form label {
+  font-size: 18px;
+}
