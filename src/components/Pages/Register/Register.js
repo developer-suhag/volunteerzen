@@ -28,16 +28,18 @@ const Register = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/event", data).then((event) => {
-      console.log(event);
-      if (event.data?.insertedId) {
-        swal({
-          title: "Registration successful",
-          icon: "success",
-        });
-        reset();
-      }
-    });
+    axios
+      .post("https://tranquil-garden-58435.herokuapp.com/event", data)
+      .then((event) => {
+        console.log(event);
+        if (event.data?.insertedId) {
+          swal({
+            title: "Registration successful",
+            icon: "success",
+          });
+          reset();
+        }
+      });
   };
   return (
     <Container
