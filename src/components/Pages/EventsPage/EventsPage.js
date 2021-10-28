@@ -39,7 +39,7 @@ const EventsPage = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure want to cancel?");
     if (proceed) {
-      fetch(`http://localhost:5000/events/${id}`, {
+      fetch(`https://tranquil-garden-58435.herokuapp.com/events/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
