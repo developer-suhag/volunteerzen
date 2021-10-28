@@ -49,6 +49,9 @@ const Header = () => {
               >
                 Blog
               </Nav.Link>
+              <Nav.Link as={Link} className="nav-link" to="/admin">
+                Admin
+              </Nav.Link>
               {user?.email ? (
                 <Button
                   onClick={handleLogout}
@@ -69,11 +72,7 @@ const Header = () => {
                   Register
                 </Button>
               </Nav.Link>
-              <Nav.Link as={Link} className="nav-link" to="/admin">
-                <Button className="px-4" variant="dark">
-                  Admin
-                </Button>
-              </Nav.Link>
+
               {user?.photoURL && (
                 <img className="profile-img" src={user?.photoURL} alt="" />
               )}

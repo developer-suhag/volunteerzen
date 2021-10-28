@@ -1,11 +1,35 @@
 import React from "react";
 import { Button, Container } from "react-bootstrap";
+import { useHistory, useLocation } from "react-router";
 import useAuth from "../../../hooks/useAuth";
 import google from "../../../images/google.png";
 import "./Login.css";
+import swal from "sweetalert";
 
 const Login = () => {
-  const { handleGoogleSignIn } = useAuth();
+  const { handleGoogleSignIn, setIsLoading } = useAuth();
+
+  const history = useHistory();
+  const location = useLocation();
+  const redirectURI = location.state?.from || "/";
+
+  const handleGoogleLogin = () => {
+    handleGoogleSignIn()
+      .then((result) => {
+        history.push(redirectURI);
+        swal({
+          title: "Login Success",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        swal({
+          title: `${error.message}`,
+          icon: "error",
+        });
+      })
+      .finally(() => setIsLoading(false));
+  };
   return (
     <>
       <Container
@@ -16,7 +40,7 @@ const Login = () => {
           <h2>Please Log In</h2>
           <div>
             <Button
-              onClick={handleGoogleSignIn}
+              onClick={handleGoogleLogin}
               variant="light"
               className="px-4 my-3"
             >

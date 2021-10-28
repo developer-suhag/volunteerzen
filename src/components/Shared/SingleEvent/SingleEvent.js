@@ -1,8 +1,10 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { useHistory } from "react-router";
 
 const SingleEvent = ({ event }) => {
-  const { name, img } = event;
+  const { _id, name, img } = event;
+  const history = useHistory();
 
   const color = {
     red: Math.floor(Math.random() * 111),
@@ -10,9 +12,17 @@ const SingleEvent = ({ event }) => {
     blue: Math.floor(Math.random() * 199),
   };
 
+  const hanldeClick = (id) => {
+    history.push(`/register/${id}`);
+  };
+
   return (
     <>
-      <Card className="h-100 shadow rounded-3">
+      <Card
+        style={{ cursor: "pointer" }}
+        onClick={() => hanldeClick(_id)}
+        className="h-100 shadow rounded-3 "
+      >
         <Card.Img variant="top" src={img} />
         <Card.Body
           style={{

@@ -9,6 +9,7 @@ import Home from "./components/Pages/Home/Home";
 import Login from "./components/Pages/Login/Login";
 import PageNotFound from "./components/Pages/PageNotFound/PageNotFound";
 import Register from "./components/Pages/Register/Register";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Footer from "./components/Shared/Footer/Footer";
 import Header from "./components/Shared/Header/Header";
 import AuthProvider from "./context/AuthProvider";
@@ -26,24 +27,24 @@ function App() {
             <Route exact path="/home">
               <Home></Home>
             </Route>
-            <Route exact path="/dontaion">
+            <PrivateRoute exact path="/dontaion">
               <Donation></Donation>
-            </Route>
-            <Route exact path="/events">
+            </PrivateRoute>
+            <PrivateRoute exact path="/events">
               <Events></Events>
-            </Route>
+            </PrivateRoute>
             <Route exact path="/blog">
               <Blog></Blog>
             </Route>
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            <Route exact path="/register">
+            <PrivateRoute exact path="/register/:id">
               <Register></Register>
-            </Route>
-            <Route exact path="/admin">
+            </PrivateRoute>
+            <PrivateRoute exact path="/admin">
               <Admin></Admin>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <PageNotFound></PageNotFound>
             </Route>

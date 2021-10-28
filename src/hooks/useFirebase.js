@@ -12,7 +12,8 @@ import swal from "sweetalert";
 initializeAuthentication();
 
 const useFirebase = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   // provider and auth
   const auth = getAuth();
@@ -20,20 +21,8 @@ const useFirebase = () => {
 
   //   google sign in
   const handleGoogleSignIn = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        setUser(result.user);
-        swal({
-          title: "Login Success",
-          icon: "success",
-        });
-      })
-      .catch((error) => {
-        swal({
-          title: `${error.message}`,
-          icon: "error",
-        });
-      });
+    setIsLoading(true);
+    return signInWithPopup(auth, googleProvider);
   };
 
   //   logout
@@ -53,7 +42,10 @@ const useFirebase = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+      } else {
+        setUser();
       }
+      setIsLoading(false);
     });
     return unsubscribe;
   }, [auth]);
@@ -62,6 +54,8 @@ const useFirebase = () => {
     handleGoogleSignIn,
     handleLogout,
     user,
+    setIsLoading,
+    isLoading,
   };
 };
 
