@@ -4,6 +4,8 @@ import { Col, Container, Row, Spinner } from "react-bootstrap";
 import useAuth from "../../../hooks/useAuth";
 import "./EventPage.css";
 import SingleEvent from "./SingleEvent/SingleEvent";
+import swal from "sweetalert";
+
 const EventsPage = () => {
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -33,13 +35,36 @@ const EventsPage = () => {
     );
   }
 
+  // handle delete
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are you sure want to cancel?");
+    if (proceed) {
+      fetch(`http://localhost:5000/events/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            setEvents([]);
+            swal({
+              title: "Delete Successful",
+              icon: "success",
+            });
+          }
+        });
+    }
+  };
+
   return (
     <>
       <Container className="py-5 vh-100">
         <Row xs={1} md={2} lg={2} className="g-4">
-          {events.map((event) => (
+          {events?.map((event) => (
             <Col key={event._id}>
-              <SingleEvent event={event}></SingleEvent>
+              <SingleEvent
+                event={event}
+                handleDelete={handleDelete}
+              ></SingleEvent>
             </Col>
           ))}
         </Row>

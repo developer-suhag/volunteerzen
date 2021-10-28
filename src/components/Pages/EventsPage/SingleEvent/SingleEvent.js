@@ -2,8 +2,9 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 import "./SingleEvent.css";
 
-const SingleEvent = ({ event }) => {
-  const { EventName, img, Date } = event;
+const SingleEvent = ({ event, handleDelete }) => {
+  const { _id, EventName, img, Date } = event;
+
   return (
     <>
       <Card className="p-3 rounded-3 shadow-sm">
@@ -17,7 +18,9 @@ const SingleEvent = ({ event }) => {
               <strong>{Date}</strong>
             </p>
             <div className="text-end">
-              <Button variant="outline-dark">Cancel</Button>
+              <Button onClick={() => handleDelete(_id)} variant="outline-dark">
+                Cancel
+              </Button>
             </div>
           </Card.Body>
         </div>
