@@ -12,13 +12,16 @@ const EventsPage = () => {
   const values = Object.values(emails);
   useEffect(() => {
     axios
-      .post("http://localhost:5000/events/byEmail", values)
+      .post(
+        "https://tranquil-garden-58435.herokuapp.com/events/byEmail",
+        values
+      )
       .then((events) => {
         setEvents(events.data);
       });
   }, []);
 
-  console.log(events);
+  // console.log(events);
 
   return (
     <>

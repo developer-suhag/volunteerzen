@@ -19,7 +19,7 @@ const Register = () => {
         setEvent(data);
       });
   }, [id]);
-
+  console.log(event);
   const {
     register,
     handleSubmit,
@@ -27,6 +27,7 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    data.img = `${event.img}`;
     console.log(data);
     axios
       .post("https://tranquil-garden-58435.herokuapp.com/event", data)
