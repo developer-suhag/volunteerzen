@@ -39,13 +39,12 @@ const EventsPage = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure want to cancel?");
     if (proceed) {
-      fetch(`https://tranquil-garden-58435.herokuapp.com/events/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            setEvents([]);
+      axios
+        .delete(`https://tranquil-garden-58435.herokuapp.com/events/${id}`)
+        .then((result) => {
+          if (result.data.deletedCount > 0) {
+            const remaining = events.filter((event) => event._id !== id);
+            setEvents(remaining);
             swal({
               title: "Delete Successful",
               icon: "success",

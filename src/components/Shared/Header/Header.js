@@ -67,11 +67,11 @@ const Header = () => {
                   </Button>
                 </Nav.Link>
               )}
-              <Nav.Link as={Link} className="nav-link" to="/register">
+              {/* <Nav.Link as={Link} className="nav-link" to="/register/:id">
                 <Button className="px-4 volunteerzen-btn" variant="">
                   Register
                 </Button>
-              </Nav.Link>
+              </Nav.Link> */}
 
               {user?.photoURL && (
                 <img className="profile-img" src={user?.photoURL} alt="" />

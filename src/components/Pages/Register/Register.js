@@ -32,7 +32,6 @@ const Register = () => {
     axios
       .post("https://tranquil-garden-58435.herokuapp.com/event", data)
       .then((event) => {
-        console.log(event);
         if (event.data?.insertedId) {
           swal({
             title: "Registration successful",
